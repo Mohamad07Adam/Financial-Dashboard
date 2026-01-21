@@ -1,9 +1,9 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
-import Dashboard from "./Scenes/dashboard";
-import Team from "./Scenes/team";
-import Contacts from "./Scenes/contacts/index";
-import Invoices from "./Scenes/invoices";
-import Form from "./Scenes/form/index.jsx";
+import Dashboard from "./scenes/dashboard";
+import Team from "./scenes/team";
+import Contacts from "./scenes/contacts/index";
+import Invoices from "./scenes/invoices";
+import Form from "./scenes/form/index.jsx";
 
 
 // import Bar from './Scenes/bar';
@@ -22,12 +22,12 @@ const router = createBrowserRouter(
       <Route path="invoices" element={<Invoices />} />
       <Route path="form" element={<Form />} />
       {/* Add more routes here when ready */}
-      {/* <Route path="bar" element={<Bar />} /> */}
-      {/* <Route path="line" element={<Line />} /> */}
-      {/* <Route path="pie" element={<Pie />} /> */}
-      {/* <Route path="faq" element={<FAQ />} /> */}
-      {/* <Route path="geography" element={<Geography />} /> */}
-      {/* <Route path="calendar" element={<Calendar />} /> */}
+      <Route path="bar" element={<Bar />} />
+      <Route path="line" element={<Line />} />
+      <Route path="pie" element={<Pie />} />
+      <Route path="faq" element={<FAQ />} />
+      <Route path="geography" element={<Geography />} />
+      <Route path="calendar" element={<Calendar />} />
     </Route>
   ),
   {
