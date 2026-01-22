@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
 import TopBar from "./scenes/global/TopBar";
-import Sidebar from "./scenes/global/Sidebar.jsx";
+import Sidebar2 from "./scenes/global/Sidebar";
+
 import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
 import Form from "./scenes/form";
-import { CssBaseline, ThemeProvider } from "@mui/material";
+
+import Calendar from "./scenes/calendar";
+import FAQ from "./scenes/FAQ";
+import Bar from "./scenes/bar";
+import Pie from "./scenes/pie";
+import Line from "./scenes/line";
+import Geography from "./scenes/geo";
+
 import { ColorModeContext, useMode } from "./theme";
-import Calendar from "./Scenes/calendar/index.jsx"
-import FAQ from "./Scenes/FAQ/index.jsx"
-import Bar from "./Scenes/bar"
-import Pie from "./Scenes/pie"
-import Line from "./Scenes/line"
-import Geography from "./Scenes/geo/index.jsx"
+
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -25,10 +30,16 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app" style={{ display: "flex", height: "100vh" }}>
-          <Sidebar isSidebar={isSidebar} />
-          <div className="main-container" style={{ display: "flex", flexDirection: "column", flex: 1 }}>
+          <Sidebar2 isSidebar={isSidebar} />
+          <div
+            className="main-container"
+            style={{ display: "flex", flexDirection: "column", flex: 1 }}
+          >
             <TopBar setIsSidebar={setIsSidebar} />
-            <main className="content" style={{ flex: 1, overflow: "auto", padding: "20px" }}>
+            <main
+              className="content"
+              style={{ flex: 1, overflow: "auto", padding: "20px" }}
+            >
               <Routes>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/team" element={<Team />} />
@@ -41,7 +52,6 @@ function App() {
                 <Route path="/pie" element={<Pie />} />
                 <Route path="/line" element={<Line />} />
                 <Route path="/geography" element={<Geography />} />
-                {/* Add back other routes as needed */}
               </Routes>
             </main>
           </div>
